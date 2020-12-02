@@ -1,3 +1,4 @@
+release_repo_url: git@github.com:moveit/geometric_shapes-release.git
 tracks:
   foxy:
     actions:
