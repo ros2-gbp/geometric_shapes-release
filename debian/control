@@ -1,0 +1,12 @@
+Source: ros-galactic-geometric-shapes
+Section: misc
+Priority: optional
+Maintainer: Tyler Weaver <tyler@picknik.ai>
+Build-Depends: debhelper (>= 9.0.0), libassimp-dev, libboost-dev, libboost-filesystem-dev, libeigen3-dev, libqhull-dev, pkg-config, ros-galactic-ament-cmake, ros-galactic-ament-cmake-gtest, ros-galactic-ament-lint-auto, ros-galactic-ament-lint-cmake, ros-galactic-console-bridge-vendor, ros-galactic-eigen-stl-containers, ros-galactic-eigen3-cmake-module, ros-galactic-geometry-msgs, ros-galactic-octomap, ros-galactic-random-numbers, ros-galactic-rclcpp, ros-galactic-resource-retriever, ros-galactic-rosidl-default-generators, ros-galactic-shape-msgs, ros-galactic-visualization-msgs, ros-galactic-ros-workspace
+Homepage: http://ros.org/wiki/geometric_shapes
+Standards-Version: 3.9.2
+
+Package: ros-galactic-geometric-shapes
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libassimp-dev, libboost-dev, libboost-filesystem1.71.0, libeigen3-dev, libqhull-dev, ros-galactic-console-bridge-vendor, ros-galactic-eigen-stl-containers, ros-galactic-eigen3-cmake-module, ros-galactic-geometry-msgs, ros-galactic-octomap, ros-galactic-random-numbers, ros-galactic-rclcpp, ros-galactic-resource-retriever, ros-galactic-rosidl-default-runtime, ros-galactic-shape-msgs, ros-galactic-visualization-msgs, ros-galactic-ros-workspace
+Description: This package contains generic definitions of geometric shapes and bodies.
