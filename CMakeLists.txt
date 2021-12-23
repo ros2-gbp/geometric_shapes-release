@@ -1,21 +1,23 @@
 cmake_minimum_required(VERSION 3.5)
 project(geometric_shapes)
 
-# Default to C++14
+# Default to C++17
 if(NOT CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 14)
+  set(CMAKE_CXX_STANDARD 17)
 endif()
 
 # Set compile options
-set(PROJECT_COMPILE_OPTIONS
-  -Wall
-  -Wextra
-  -Wwrite-strings
-  -Wunreachable-code
-  -Wpointer-arith
-  -Wredundant-decls
-  -Wno-unused-parameter
-)
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  set(PROJECT_COMPILE_OPTIONS
+    -Wall
+    -Wextra
+    -Wwrite-strings
+    -Wunreachable-code
+    -Wpointer-arith
+    -Wredundant-decls
+    -Wno-unused-parameter
+  )
+endif()
 
 list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
 
@@ -46,7 +48,7 @@ find_package(eigen3_cmake_module REQUIRED)
 find_package(Eigen3 REQUIRED)
 
 find_package(ament_cmake REQUIRED)
-find_package(Boost REQUIRED filesystem)
+include(ConfigExtras)
 find_package(console_bridge REQUIRED)
 find_package(console_bridge_vendor REQUIRED)
 find_package(eigen_stl_containers REQUIRED)
@@ -90,8 +92,7 @@ add_library(${PROJECT_NAME} SHARED
   src/shape_to_marker.cpp
   src/shapes.cpp
 )
-target_compile_options(${PROJECT_NAME} PRIVATE ${PROJECT_COMPILE_OPTIONS})
-set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${${PROJECT_NAME}_VERSION})
+set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${${PROJECT_NAME}_VERSION} WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
 target_compile_options(${PROJECT_NAME} PRIVATE ${PROJECT_COMPILE_OPTIONS})
 ament_target_dependencies(${PROJECT_NAME}
   ${THIS_PACKAGE_EXPORT_DEPENDS}
@@ -125,4 +126,4 @@ install(DIRECTORY include/ DESTINATION include)
 ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
 ament_export_dependencies(${THIS_PACKAGE_EXPORT_DEPENDS})
 
-ament_package()
+ament_package(CONFIG_EXTRAS "cmake/ConfigExtras.cmake")
