@@ -1,0 +1,12 @@
+Source: ros-iron-geometric-shapes
+Section: misc
+Priority: optional
+Maintainer: Tyler Weaver <tyler@picknik.ai>
+Build-Depends: debhelper (>= 9.0.0), libassimp-dev, libboost-dev, libboost-filesystem-dev, libeigen3-dev, libqhull-dev, pkg-config, ros-iron-ament-cmake, ros-iron-ament-cmake-copyright <!nocheck>, ros-iron-ament-cmake-gtest <!nocheck>, ros-iron-ament-lint-auto <!nocheck>, ros-iron-ament-lint-cmake <!nocheck>, ros-iron-console-bridge-vendor, ros-iron-eigen-stl-containers, ros-iron-eigen3-cmake-module, ros-iron-geometry-msgs, ros-iron-octomap, ros-iron-random-numbers, ros-iron-rclcpp, ros-iron-resource-retriever, ros-iron-rosidl-default-generators, ros-iron-shape-msgs, ros-iron-visualization-msgs, ros-iron-ros-workspace
+Homepage: http://ros.org/wiki/geometric_shapes
+Standards-Version: 3.9.2
+
+Package: ros-iron-geometric-shapes
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libassimp-dev, libboost-dev, libboost-filesystem1.74.0, libeigen3-dev, libqhull-dev, ros-iron-console-bridge-vendor, ros-iron-eigen-stl-containers, ros-iron-eigen3-cmake-module, ros-iron-geometry-msgs, ros-iron-octomap, ros-iron-random-numbers, ros-iron-rclcpp, ros-iron-resource-retriever, ros-iron-rosidl-default-runtime, ros-iron-shape-msgs, ros-iron-visualization-msgs, ros-iron-ros-workspace
+Description: This package contains generic definitions of geometric shapes and bodies.
