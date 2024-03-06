@@ -72,7 +72,7 @@ tracks:
     name: upstream_foxy
     patches: null
     release_inc: '2'
-    release_repo_url: git@github.com:moveit/geometric_shapes-release.git
+    release_repo_url: null
     release_tag: :{version}
     ros_distro: humble
     vcs_type: git
@@ -124,7 +124,7 @@ tracks:
     name: upstream_foxy
     patches: null
     release_inc: '3'
-    release_repo_url: git@github.com:moveit/geometric_shapes-release.git
+    release_repo_url: null
     release_tag: :{version}
     ros_distro: rolling
     vcs_type: git
