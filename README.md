@@ -1,3 +1,26 @@
+## geometric_shapes (rolling) - 2.1.3-4
+
+The packages in the `geometric_shapes` repository were released into the `rolling` distro by running `/usr/bin/bloom-release --track rolling --rosdistro rolling geometric_shapes` on `Thu, 07 Mar 2024 15:58:43 -0000`
+
+The `geometric_shapes` package was released.
+
+Version of package(s) in repository `geometric_shapes`:
+
+- upstream repository: https://github.com/ros-planning/geometric_shapes.git
+- release repository: https://github.com/ros2-gbp/geometric_shapes-release.git
+- rosdistro version: `null`
+- old version: `2.1.3-3`
+- new version: `2.1.3-4`
+
+Versions of tools used:
+
+- bloom version: `0.11.2`
+- catkin_pkg version: `1.0.0`
+- rosdep version: `0.22.2`
+- rosdistro version: `0.9.0`
+- vcstools version: `0.1.42`
+
+
 ## geometric_shapes (rolling) - 2.1.3-1
 
 The packages in the `geometric_shapes` repository were released into the `rolling` distro by running `/home/jafar/.local/bin/bloom-release geometric_shapes -t rolling -r rolling --override-release-repository-url https://github.com/ros2-gbp/geometric_shapes-release.git` on `Wed, 06 Apr 2022 14:30:18 -0000`
