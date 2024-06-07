@@ -154,5 +154,5 @@ tracks:
     release_tag: :{version}
     ros_distro: rolling
     vcs_type: git
-    vcs_uri: https://github.com/ros-planning/geometric_shapes.git
+    vcs_uri: https://github.com/moveit/geometric_shapes.git
     version: :{ask}
