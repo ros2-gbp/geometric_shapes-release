@@ -1,0 +1,12 @@
+Source: ros-humble-geometric-shapes
+Section: misc
+Priority: optional
+Maintainer: Tyler Weaver <tyler@picknik.ai>
+Build-Depends: debhelper (>= 9.0.0), libassimp-dev, libboost-dev, libboost-filesystem-dev, libeigen3-dev, libfcl-dev, liboctomap-dev, libqhull-dev, pkg-config, ros-humble-ament-cmake, ros-humble-ament-cmake-copyright <!nocheck>, ros-humble-ament-cmake-gtest <!nocheck>, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-cmake <!nocheck>, ros-humble-console-bridge-vendor, ros-humble-eigen-stl-containers, ros-humble-eigen3-cmake-module, ros-humble-geometry-msgs, ros-humble-random-numbers, ros-humble-rclcpp, ros-humble-resource-retriever, ros-humble-rosidl-default-generators, ros-humble-shape-msgs, ros-humble-visualization-msgs, ros-humble-ros-workspace
+Homepage: http://ros.org/wiki/geometric_shapes
+Standards-Version: 3.9.2
+
+Package: ros-humble-geometric-shapes
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libassimp-dev, libboost-dev, libboost-filesystem1.74.0, libeigen3-dev, libfcl0.7, liboctomap-dev, libqhull-dev, ros-humble-console-bridge-vendor, ros-humble-eigen-stl-containers, ros-humble-eigen3-cmake-module, ros-humble-geometry-msgs, ros-humble-random-numbers, ros-humble-rclcpp, ros-humble-resource-retriever, ros-humble-rosidl-default-runtime, ros-humble-shape-msgs, ros-humble-visualization-msgs, ros-humble-ros-workspace
+Description: This package contains generic definitions of geometric shapes and bodies.
