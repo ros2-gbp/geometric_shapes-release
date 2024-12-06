@@ -145,9 +145,9 @@ tracks:
       :{release_inc} --os-name fedora
     - git-bloom-generate -y rosrpm --prefix release/:{ros_distro} :{ros_distro} -i
       :{release_inc} --os-name rhel
-    devel_branch: null
+    devel_branch: ros2
     last_version: 2.3.0
-    name: upstream_foxy
+    name: upstream
     patches: null
     release_inc: '1'
     release_repo_url: null
@@ -155,4 +155,4 @@ tracks:
     ros_distro: rolling
     vcs_type: git
     vcs_uri: https://github.com/moveit/geometric_shapes.git
-    version: :{ask}
+    version: :{auto}
