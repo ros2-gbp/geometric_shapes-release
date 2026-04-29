@@ -183,4 +183,5 @@ tracks:
     ros_distro: rolling
     vcs_type: git
     vcs_uri: https://github.com/moveit/geometric_shapes.git
-    version: :{auto}
+    version: 2.3.3
+    version_saved: :{auto}
