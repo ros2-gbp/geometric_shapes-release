@@ -1,3 +1,26 @@
+## geometric_shapes (humble) - 2.3.4-1
+
+The packages in the `geometric_shapes` repository were released into the `humble` distro by running `/usr/bin/bloom-release --rosdistro humble geometric_shapes` on `Tue, 09 Jun 2026 12:44:16 -0000`
+
+The `geometric_shapes` package was released.
+
+Version of package(s) in repository `geometric_shapes`:
+
+- upstream repository: https://github.com/ros-planning/geometric_shapes.git
+- release repository: https://github.com/ros2-gbp/geometric_shapes-release.git
+- rosdistro version: `2.3.2-1`
+- old version: `2.3.2-1`
+- new version: `2.3.4-1`
+
+Versions of tools used:
+
+- bloom version: `0.14.3`
+- catkin_pkg version: `1.1.0`
+- rosdep version: `0.26.0`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## geometric_shapes (jazzy) - 2.3.4-1
 
 The packages in the `geometric_shapes` repository were released into the `jazzy` distro by running `/usr/bin/bloom-release --rosdistro jazzy geometric_shapes` on `Tue, 09 Jun 2026 12:43:05 -0000`
