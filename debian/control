@@ -1,0 +1,12 @@
+Source: ros-lyrical-geometric-shapes
+Section: misc
+Priority: optional
+Maintainer: "Tyler Weaver" <tyler@picknik.ai>
+Build-Depends: debhelper (>= 9.0.0), libassimp-dev, libboost-dev, libboost-filesystem-dev, libeigen3-dev, libfcl-dev, libqhull-dev, pkg-config, ros-lyrical-ament-cmake, ros-lyrical-ament-cmake-copyright <!nocheck>, ros-lyrical-ament-cmake-gtest <!nocheck>, ros-lyrical-ament-lint-auto <!nocheck>, ros-lyrical-ament-lint-cmake <!nocheck>, ros-lyrical-console-bridge-vendor, ros-lyrical-eigen-stl-containers, ros-lyrical-eigen3-cmake-module, ros-lyrical-geometry-msgs, ros-lyrical-random-numbers, ros-lyrical-rclcpp, ros-lyrical-resource-retriever, ros-lyrical-rosidl-default-generators, ros-lyrical-shape-msgs, ros-lyrical-visualization-msgs, ros-lyrical-ros-workspace
+Homepage: http://ros.org/wiki/geometric_shapes
+Standards-Version: 3.9.2
+
+Package: ros-lyrical-geometric-shapes
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libassimp-dev, libboost-dev, libboost-filesystem1.83.0, libeigen3-dev, libfcl0.7, libqhull-dev, ros-lyrical-console-bridge-vendor, ros-lyrical-eigen-stl-containers, ros-lyrical-eigen3-cmake-module, ros-lyrical-geometry-msgs, ros-lyrical-random-numbers, ros-lyrical-rclcpp, ros-lyrical-resource-retriever, ros-lyrical-rosidl-default-runtime, ros-lyrical-shape-msgs, ros-lyrical-visualization-msgs, ros-lyrical-ros-workspace
+Description: This package contains generic definitions of geometric shapes and bodies.
