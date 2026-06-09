@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.20)
 project(geometric_shapes)
 
 # Default to C++17
@@ -43,9 +43,6 @@ find_package(console_bridge REQUIRED)
 find_package(console_bridge_vendor REQUIRED)
 find_package(eigen_stl_containers REQUIRED)
 find_package(geometry_msgs REQUIRED)
-# Enforce the system package version on Ubuntu jammy and noble which is also used by libfcl-dev
-# The version is fixed to prevent ABI conflicts with ros-octomap
-find_package(octomap 1.9.7...<1.10.0 REQUIRED)
 find_package(QHULL REQUIRED)
 find_package(random_numbers REQUIRED)
 find_package(rclcpp REQUIRED)
@@ -53,7 +50,6 @@ find_package(resource_retriever REQUIRED)
 find_package(shape_msgs REQUIRED)
 find_package(visualization_msgs REQUIRED)
 find_package(fcl REQUIRED)
-include(ConfigExtras)
 
 set(THIS_PACKAGE_EXPORT_DEPENDS
   eigen3_cmake_module
@@ -63,7 +59,6 @@ set(THIS_PACKAGE_EXPORT_DEPENDS
   console_bridge_vendor
   eigen_stl_containers
   geometry_msgs
-  octomap
   random_numbers
   rclcpp
   resource_retriever
@@ -90,15 +85,25 @@ target_compile_options(${PROJECT_NAME} PRIVATE ${PROJECT_COMPILE_OPTIONS})
 target_include_directories(${PROJECT_NAME}
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
            $<INSTALL_INTERFACE:include/${PROJECT_NAME}>)
-ament_target_dependencies(${PROJECT_NAME} PUBLIC
-  ${THIS_PACKAGE_EXPORT_DEPENDS}
-)
 # Private libraries that are not transitively needed by downstream projects
-target_link_libraries(${PROJECT_NAME} PRIVATE assimp::assimp fcl ${QHULL_LIBRARIES})
-target_include_directories(${PROJECT_NAME} PRIVATE ${QHULL_INCLUDE_DIRS})
+target_link_libraries(${PROJECT_NAME}
+  PRIVATE
+    assimp::assimp
+    fcl
+    ${QHULL_LIBRARIES}
+  PUBLIC
+    ${geometry_msgs_TARGETS}
+    ${shape_msgs_TARGETS}
+    ${visualization_msgs_TARGETS}
+    ${console_bridge_TARGETS}
+    eigen_stl_containers::eigen_stl_containers
+    random_numbers::random_numbers
+    rclcpp::rclcpp
+    resource_retriever::resource_retriever
+)
+target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE ${QHULL_INCLUDE_DIRS})
 
 if(BUILD_TESTING)
-  find_package(ament_cmake_gtest REQUIRED)
   # Unit tests
   add_subdirectory(test)
 
@@ -120,4 +125,4 @@ install(DIRECTORY include/ DESTINATION include/${PROJECT_NAME})
 ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
 ament_export_dependencies(${THIS_PACKAGE_EXPORT_DEPENDS})
 
-ament_package(CONFIG_EXTRAS "cmake/ConfigExtras.cmake")
+ament_package()
