@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.20)
 project(geometric_shapes)
 
 # Default to C++17
@@ -43,9 +43,6 @@ find_package(console_bridge REQUIRED)
 find_package(console_bridge_vendor REQUIRED)
 find_package(eigen_stl_containers REQUIRED)
 find_package(geometry_msgs REQUIRED)
-# Enforce the system package version on Ubuntu jammy and noble which is also used by libfcl-dev
-# The version is fixed to prevent ABI conflicts with ros-octomap
-find_package(octomap 1.9.7...<1.10.0 REQUIRED)
 find_package(QHULL REQUIRED)
 find_package(random_numbers REQUIRED)
 find_package(rclcpp REQUIRED)
@@ -62,7 +59,6 @@ set(THIS_PACKAGE_EXPORT_DEPENDS
   console_bridge_vendor
   eigen_stl_containers
   geometry_msgs
-  octomap
   random_numbers
   rclcpp
   resource_retriever
@@ -105,7 +101,7 @@ target_link_libraries(${PROJECT_NAME}
     rclcpp::rclcpp
     resource_retriever::resource_retriever
 )
-target_include_directories(${PROJECT_NAME} PRIVATE ${QHULL_INCLUDE_DIRS})
+target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE ${QHULL_INCLUDE_DIRS})
 
 if(BUILD_TESTING)
   # Unit tests
